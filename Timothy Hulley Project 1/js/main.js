@@ -14,7 +14,7 @@ import "./phaser.js";
 class gameScene extends Phaser.Scene {
     
     var player;
-	var houses;
+	//var houses;
 	
 	constructor() {
         super();
@@ -62,7 +62,7 @@ class gameScene extends Phaser.Scene {
         // This function returns the rotation angle that makes it visually match its
         // new trajectory.
         //this.bouncy.rotation = this.physics.accelerateToObject( this.bouncy, this.input.activePointer, 500, 500, 500 );
-		
+		/*
 		if (cursors.left.isDown) {
 			player.setVelocityX(-160);
 		} 
@@ -75,6 +75,7 @@ class gameScene extends Phaser.Scene {
 		else if (cursors.down.isDown) {
 			player.setVelocityY(160);
 		}
+		*/
     }
 }
 
