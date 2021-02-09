@@ -13,11 +13,11 @@ import "./phaser.js";
 
 class gameScene extends Phaser.Scene {
     
-    var player;
-	var houses;
-	
 	constructor() {
         super();
+		
+		var player;
+		var houses;
     }
     
     preload() {
