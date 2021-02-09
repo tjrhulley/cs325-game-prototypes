@@ -30,35 +30,33 @@ var player;
 		//var houses;
     }*/
     
-    preload() {
-        this.load.image( 'pizzaLegs', 'assets/Pizza dude-1.png.png' );
-		this.load.image( 'pizzaTorso', 'assets/Pizza dude-2.png.png' );
-		this.load.image( 'skyTEMP', 'assets/sky.png' );
-    }
+preload() {
+    this.load.image( 'pizzaLegs', 'assets/Pizza dude-1.png.png' );
+	this.load.image( 'pizzaTorso', 'assets/Pizza dude-2.png.png' );
+	this.load.image( 'skyTEMP', 'assets/sky.png' );
+}
+    
+create() {
+    this.add.image(400, 300, 'skyTEMP');
+	this.add.image(400, 584, 'pizzaLegs');
 	
-
+	player = this.add.sprite(400, 568, 'pizzaTorso');
+}
     
-    create() {
-        this.add.image(400, 300, 'skyTEMP');
-		this.add.image(400, 584, 'pizzaLegs');
-		
-		player = this.add.sprite(400, 568, 'pizzaTorso');
-    }
-    
-    update() {
-		if (cursors.left.isDown) {
-			player.setVelocityX(-160);
-		} 
-		else if (cursors.right.isDown) {
-			player.setVelocityX(160);
-		}
-		else if (cursors.up.isDown) {
-			player.setVelocityY(-160);
-		}
-		else if (cursors.down.isDown) {
-			player.setVelocityY(160);
-		}
-    }
+update() {
+	if (cursors.left.isDown) {
+		player.setVelocityX(-160);
+	} 
+	else if (cursors.right.isDown) {
+		player.setVelocityX(160);
+	}
+	else if (cursors.up.isDown) {
+		player.setVelocityY(-160);
+	}
+	else if (cursors.down.isDown) {
+		player.setVelocityY(160);
+	}
+}
 
 
 
