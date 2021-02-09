@@ -13,12 +13,12 @@ import "./phaser.js";
 
 class gameScene extends Phaser.Scene {
 	
-	constructor() {
+	/*constructor() {
         super();
 		
 		
 		//var houses;
-    }
+    }*/
     
     preload() {
         this.load.image( 'pizzaLegs', 'assets/Pizza dude-1.png.png' );
