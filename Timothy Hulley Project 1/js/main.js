@@ -26,9 +26,15 @@ class gameScene extends Phaser.Scene {
 		this.load.image( 'skyTEMP', 'assets/sky.png' );
     }
     
+	var player;
+	var houses;
+	//var moveMode = 'none';
+	
     create() {
         this.add.image(400, 300, 'skyTEMP');
-		this.add.image(400, 592, 'pizzaLegs');
+		this.add.image(400, 584, 'pizzaLegs');
+		
+		player = this.add.sprite(400, 568, 'pizzaTorso');
 		
 		
 		// Create a sprite at the center of the screen using the 'logo' image.
@@ -57,6 +63,19 @@ class gameScene extends Phaser.Scene {
         // This function returns the rotation angle that makes it visually match its
         // new trajectory.
         //this.bouncy.rotation = this.physics.accelerateToObject( this.bouncy, this.input.activePointer, 500, 500, 500 );
+		
+		if (cursors.left.isDown) {
+			player.setVelocityX(-160);
+		} 
+		else if (cursors.right.isDown) {
+			player.setVelocityX(160);
+		}
+		else if (cursors.up.isDown) {
+			player.setVelocityY(-160);
+		}
+		else if (cursors.down.isDown) {
+			player.setVelocityY(160);
+		}
     }
 }
 
