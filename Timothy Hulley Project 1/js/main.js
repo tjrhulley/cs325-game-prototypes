@@ -13,7 +13,10 @@ import "./phaser.js";
 
 class gameScene extends Phaser.Scene {
     
-    constructor() {
+    var player;
+	var houses;
+	
+	constructor() {
         super();
         
         //this.bouncy = null;
@@ -26,10 +29,6 @@ class gameScene extends Phaser.Scene {
 		this.load.image( 'skyTEMP', 'assets/sky.png' );
     }
     
-	var player;
-	var houses;
-	//var moveMode = 'none';
-	
     create() {
         this.add.image(400, 300, 'skyTEMP');
 		this.add.image(400, 584, 'pizzaLegs');
