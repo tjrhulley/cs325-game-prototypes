@@ -11,8 +11,18 @@ import "./phaser.js";
 
 // The simplest class example: https://phaser.io/examples/v3/view/scenes/scene-from-es6-class
 
-class gameScene extends Phaser.Scene {
-	
+
+const game = new Phaser.Game({
+    type: Phaser.AUTO,
+    parent: 'game',
+    width: 800,
+    height: 600,
+    scene: gameScene,
+    //physics: { default: 'arcade' },
+});
+
+var player;
+
 	/*constructor() {
         super();
 		
@@ -26,7 +36,7 @@ class gameScene extends Phaser.Scene {
 		this.load.image( 'skyTEMP', 'assets/sky.png' );
     }
 	
-	var player;
+
     
     create() {
         this.add.image(400, 300, 'skyTEMP');
@@ -49,13 +59,6 @@ class gameScene extends Phaser.Scene {
 			player.setVelocityY(160);
 		}
     }
-}
 
-const game = new Phaser.Game({
-    type: Phaser.AUTO,
-    parent: 'game',
-    width: 800,
-    height: 600,
-    scene: gameScene,
-    //physics: { default: 'arcade' },
-});
+
+
