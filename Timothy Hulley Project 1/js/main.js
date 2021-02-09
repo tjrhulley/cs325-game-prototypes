@@ -21,14 +21,14 @@ class gameScene extends Phaser.Scene {
     
     preload() {
         // Load an image and call it 'logo'.
-        this.load.image( 'pizzaLegs', 'assets/Pizza dude-1.png' );
-		this.load.image( 'pizzaTorso', 'assets/Pizza dude-2.png' );
+        this.load.image( 'pizzaLegs', 'assets/Pizza dude-1.png.png' );
+		this.load.image( 'pizzaTorso', 'assets/Pizza dude-2.png.png' );
 		this.load.image( 'skyTEMP', 'assets/sky.png' );
     }
     
     create() {
-        this.add.image(400,300,'sky');
-		this.add.image(400,592,'pizzaLegs');
+        this.add.image(400, 300, 'skyTEMP');
+		this.add.image(400, 592, 'pizzaLegs');
 		
 		
 		// Create a sprite at the center of the screen using the 'logo' image.
