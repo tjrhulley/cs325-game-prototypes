@@ -33,7 +33,7 @@ class gameScene extends Phaser.Scene {
         this.add.image(400, 300, 'skyTEMP');
 		this.add.image(400, 584, 'pizzaLegs');
 		
-		player = this.add.sprite(400, 568, 'pizzaTorso');
+		//player = this.add.sprite(400, 568, 'pizzaTorso');
 		
 		
 		// Create a sprite at the center of the screen using the 'logo' image.
