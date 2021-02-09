@@ -16,7 +16,7 @@ class MyScene extends Phaser.Scene {
     constructor() {
         super();
         
-        this.bouncy = null;
+        //this.bouncy = null;
     }
     
     preload() {
@@ -28,6 +28,7 @@ class MyScene extends Phaser.Scene {
     
     create() {
         this.add.image(400,300,'sky');
+		this.add.image(400,592,'pizzaLegs');
 		
 		
 		// Create a sprite at the center of the screen using the 'logo' image.
@@ -65,5 +66,5 @@ const game = new Phaser.Game({
     width: 800,
     height: 600,
     scene: gameScene,
-    //physics: { default: 'arcade' },
+    physics: { default: 'arcade' },
 });
