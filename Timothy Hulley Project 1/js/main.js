@@ -11,7 +11,7 @@ import "./phaser.js";
 
 // The simplest class example: https://phaser.io/examples/v3/view/scenes/scene-from-es6-class
 
-class MyScene extends Phaser.Scene {
+class gameScene extends Phaser.Scene {
     
     constructor() {
         super();
