@@ -12,8 +12,6 @@ import "./phaser.js";
 // The simplest class example: https://phaser.io/examples/v3/view/scenes/scene-from-es6-class
 
 class gameScene extends Phaser.Scene {
-    
-	var player;
 	
 	constructor() {
         super();
@@ -27,6 +25,8 @@ class gameScene extends Phaser.Scene {
 		this.load.image( 'pizzaTorso', 'assets/Pizza dude-2.png.png' );
 		this.load.image( 'skyTEMP', 'assets/sky.png' );
     }
+	
+	var player;
     
     create() {
         this.add.image(400, 300, 'skyTEMP');
