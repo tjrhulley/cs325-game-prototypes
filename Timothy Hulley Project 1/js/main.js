@@ -260,25 +260,25 @@ function update (time, delta)
     if (cursors.left.isDown)
     {
         dontMove = 0;
-		snake.angle = -90;
+		snake.head.angle = -90;
 		snake.faceLeft();
     }
     else if (cursors.right.isDown)
     {
         dontMove = 0;
-		snake.angle = 90;
+		snake.head.angle = 90;
 		snake.faceRight();
     }
     else if (cursors.up.isDown)
     {
         dontMove = 0;
-		snake.angle = 0;
+		snake.head.angle = 0;
 		snake.faceUp();
     }
     else if (cursors.down.isDown)
     {
         dontMove = 0;
-		snake.angle = 180;
+		snake.head.angle = 180;
 		snake.faceDown();
     }
 
