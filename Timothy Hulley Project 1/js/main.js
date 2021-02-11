@@ -30,6 +30,7 @@ function preload ()
 {
     this.load.image('food', 'assets/Pizza dude-1.png.png');
     this.load.image('body', 'assets/Pizza dude-2.png.png');
+	this.loud.image('middle', 'assets/Pizza dude-3.png.png');
 	this.load.image('sky', 'assets/sky.png' );
 }
 
@@ -95,6 +96,7 @@ function create ()
             {
 				if (time >= this.moveTime)
 				{
+					this.grow;
 					return this.move(time);
 				}
 			}
@@ -189,7 +191,7 @@ function create ()
 
         grow: function ()
         {
-            var newPart = this.body.create(this.tail.x, this.tail.y, 'body');
+            var newPart = this.body.create(this.tail.x, this.tail.y, 'middle');
 
             newPart.setOrigin(0);
         },
@@ -258,21 +260,25 @@ function update (time, delta)
     if (cursors.left.isDown)
     {
         dontMove = 0;
+		snake.angle = -90;
 		snake.faceLeft();
     }
     else if (cursors.right.isDown)
     {
         dontMove = 0;
+		snake.angle = 90;
 		snake.faceRight();
     }
     else if (cursors.up.isDown)
     {
         dontMove = 0;
+		snake.angle = 0;
 		snake.faceUp();
     }
     else if (cursors.down.isDown)
     {
         dontMove = 0;
+		snake.angle = 180;
 		snake.faceDown();
     }
 
