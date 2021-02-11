@@ -86,7 +86,7 @@ function create ()
 
             this.tail = new Phaser.Geom.Point(x, y);
 
-            this.heading = NONE;
+            this.heading = UP;
             this.direction = UP;
         },
 
