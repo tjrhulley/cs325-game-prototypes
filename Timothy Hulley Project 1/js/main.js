@@ -89,7 +89,7 @@ function create ()
         {
             this.lootGet = true;
 			this.total++;
-			if (toReset > 0) //Why is this reseting?
+			if (toReset > 0)
 			{
 				get1.play();
 			}
@@ -114,7 +114,7 @@ function create ()
 
             this.alive = true;
 
-            this.speed = 100;
+            this.speed = 150;
 
             this.moveTime = 0;
 
