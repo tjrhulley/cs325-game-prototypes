@@ -3,9 +3,8 @@ import "./phaser.js";
 // You can copy-and-paste the code from any of the examples at https://examples.phaser.io here.
 var config = {
     type: Phaser.WEBGL,
-    width: 800,
-    height: 600,
-    backgroundColor: '#bfcc00',
+    width: 640,
+    height: 480,
     parent: 'phaser-example',
     scene: {
         preload: preload,
@@ -36,8 +35,8 @@ function preload ()
 
 function create ()
 {
-	this.add.image(400, 300, 'sky');
-	this.add.image(400, 584, 'food');
+	this.add.image(320, 240, 'sky');
+	this.add.image(320, 464, 'food');
 	
     var Food = new Phaser.Class({
 
@@ -75,7 +74,7 @@ function create ()
 
             this.body = scene.add.group();
 
-            this.head = this.body.create(400, 560, 'body');
+            this.head = this.body.create(320, 440, 'body');
             this.head.setOrigin(0);
 
             this.alive = true;
