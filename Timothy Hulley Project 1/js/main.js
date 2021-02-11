@@ -18,6 +18,7 @@ var legs;
 var food1;
 var food2;
 var food3;
+var food4;
 var cursors;
 
 //  Direction consts
@@ -26,7 +27,7 @@ var DOWN = 1;
 var LEFT = 2;
 var RIGHT = 3;
 var dontMove = 1;
-var toReset = 3;
+var toReset = 4;
 
 var score = 0;
 var scoreText;
@@ -55,9 +56,9 @@ function preload ()
 function create ()
 {
 	this.add.image(320, 240, 'sky');
-	this.add.image(16, 16, 'pizza');
+	this.add.image(30, 30, 'pizza');
 	legs = this.add.image(320, 464, 'food');
-	scoreText = this.add.text(48, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
+	scoreText = this.add.text(64, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
 	
 	get1 = this.sound.add('coin1');
 	get2 = this.sound.add('coin3');
@@ -286,6 +287,7 @@ function create ()
     food1 = new Food(this, 10, 8);
     food2 = new Food(this, 20, 6);
     food3 = new Food(this, 30, 8);
+	food4 = new Food(this, 20, 12);
 
     snake = new Snake(this, 18, 26);
 
@@ -348,11 +350,16 @@ function update (time, delta)
         {
            toReset -= 1;            
         }
+		if (snake.collideWithFood(food4))
+        {
+           toReset -= 1;            
+        }
         if (toReset <= 0)
         {
             repositionFood(food1);
             repositionFood(food2);
             repositionFood(food3);
+			repositionFood(food4);
 			snake.resetSnake();
 			legs.setPosition((snake.x - 16) * 1, (snake.y - 16) * 1);
             toReset = 3;

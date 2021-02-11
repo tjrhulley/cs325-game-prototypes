@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Hello! Amaze!</title>
+<title>Timothy Hulley Digital Assignment 1</title>
 <style>
 body
 {
@@ -19,72 +19,81 @@ body
 <body>
 <div id="game"></div>
 <div id="readme">
-<h2>Your game title</h2>
+<h2>The Incredible Elastic Pizza Man</h2>
 
 <ul>
 <li><strong>Originality:</strong>
-What is original about your game?
+It's a slight twist on the classic game "Snake" where your body is constantly growing, leaving you to avoid your own trail.
 </li>
 
 <li><strong>Technical Merit:</strong>
-What is interesting about your game technology?
+The game is in fact sentient, and refuses to place the borders where the pizza man loops back around along the edges of the screen no matter how hard I yell at it!
 </li>
 
 <li><strong>Prototype Postmortem:</strong>
-What did you learn from this prototype?
-What was the easiest or hardest part of making it?
+I learned quite a lot about how Phaser (and javascript) are structured thanks to the demo I ended up using. Easiest part was reworking some of the base game mechanics in 
+Snake to work with my game idea. Hardest part was getting the initial variables working (for some reason Phaser refused to recognise any of my variables in the old 
+templates so I was at a dead end for a while).
 </li>
 
 <li><strong>Prototype Assets:</strong>
 Did you make your prototype assets from scratch? Did you borrow them? Cite your sources here.
 <ul>
-<li>Bouncing Phaser image: <a href="https://phaser.io/download/logo">Phaser logo</a></li>
+<li>Code from Snake Phaser 3 example: <a href="https://phaser.io/examples/v3/view/games/snake/part7">Link</a></li>
+<li>Sky background from "Making your first Phaser 3 game" tutorial: <a href="http://phaser.io/tutorials/making-your-first-phaser-3-game/part2">Link</a></li>
 </ul>
 </li>
 
 <li><strong>Prototype Closest Other Game:</strong>
-Which other game most closely resembles your game? If you are borrowing code from a Phaser Example, you must say so here. If you borrow code from elsewhere, you must say so here.
+Snake
 </li>
 
 <li><strong>High Concept:</strong>
-A one-sentence summary of your game.
+A pizza man has to deliver pizzas to mysterious floating houses the only way he knows how.
 </li>
 
 <li><strong>Theme:</strong>
-State which of the Storymatic themes you used.
+Absurdist and Gravity Defying.
 </li>
 
 <li><strong>Mandated Variety:</strong>
 State which input, randomness, genre, and play style you used in this prototype.
+It is an old school style arcade game. Players use the arrow keys to control the pizza man's torso as he stretches through the sky. The houses are randomly placed after three are collected.
 </li>
 
 <li><strong>Prototype Goal:</strong>
-What game mechanic is this prototype evaluating?
+Avoiding self made hazards while collecting pickups.
 </li>
 
 <li><strong>Player Experience Goals:</strong>
-What experience do you want players to have when playing your game?
+Players will try to get the highest score they can and compete with other players scores. They'll have to think quick as they try to deliver the pizzas without accidently walling themselves or the houses in!
 </li>
 
 <li><strong>Gameplay:</strong>
-A paragraph describing the actions the player can perform, the system dynamics, and the core mechanic. Include a concise explanation of the prototype’s inputs and their expected effects (how to play). You can also describe game play that is not in the prototype. You may include mock-up images for parts of the game not in the prototype.
+Press any of the arrow keys to start the game. As the pizza man moves, use the arrow keys to change his direction, but try not to run into your own extending body or else it's game over!
+The goal is to deliver as many pizzas to the floating houses as possible without hitting yourself. Whenever you deliver three pizzas, your body resets itself, allowing you to create new paths.
+There is no end goal, so just keep on delivering and trying to beat your own high scores!
+
+Later builds of the game will have obstacles (birds, planes, other floating objects) that the player must avoid. The pizza man will also have a torso that is properly attached to their legs.
+Player speed will also increase with the more pizzas collected.
 </li>
 
 <li><strong>Strategies:</strong>
-What player strategies do you expect will be effective at playing this game?
+Strategies could include trying to make as short of a path as possible, or in classic Snake fashion, making longer, more straightforward paths along the edges to avoid blocking yourself.
 </li>
 
 <li><strong>Story/Setting/Premise:</strong>
-A paragraph about the world your game is set in and who the characters are. What makes the game world and its occupants unique and interesting? Do the tokens represent something? If the game has a backstory, mention it here. If the game is abstract, then say so.
-How will the dramatic tension interact with the gameplay tension?
+After all of the Earth's gravity suddenly disappeared one night, everyone has been trying their best to cope. Despite many of their homes and possessions floating off into the sky, a lot of people still want 
+to order a god damned pizza! To fulfill these high value orders, some pizza companies had to get a little creative. They involuntarily injected their delivery workers with a mix of green heron and girrafe DNA, 
+giving them the power to elongate their bodies to insane levels. One such pizza man then superglues his feet to the ground as he prepares for another day on the job.
 </li>
 
 <li><strong>Target Audience:</strong>
-A single sentence that describes the demographic you're trying to reach.
+Fans of classic arcade games.
 </li>
 
 <li><strong>Play Time:</strong>
-How long does your game take to play?
+It can last as long as the player can survive, but typically rounds don't last longer than a few minutes.
 </li>
 
 </ul>
