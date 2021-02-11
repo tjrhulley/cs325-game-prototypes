@@ -47,7 +47,7 @@ function create ()
 {
 	this.add.image(320, 240, 'sky');
 	legs = this.add.image(320, 464, 'food');
-	scoreText = this.add.text(48, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
+	scoreText = this.add.text(0, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
 	
     var Food = new Phaser.Class({
 
@@ -252,7 +252,6 @@ function create ()
 		resetSnake: function ()
         {
             this.body.clear(true);
-			this.headPosition = new Phaser.Geom.Point(snake.x, snake.y);
             this.head = this.body.create(snake.x, snake.y, 'body');
             this.head.setOrigin(0);
             this.tail = new Phaser.Geom.Point(snake.x, snake.y);
