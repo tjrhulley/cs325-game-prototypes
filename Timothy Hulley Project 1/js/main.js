@@ -33,7 +33,7 @@ class MyScene extends Phaser.Scene {
         this.add.image(400, 300, 'logo');
 		this.add.image(400, 584, 'pizzaLegs');
 		
-		player = this.add.image(400, 568, 'pizzaTorso');
+		player = this.add.image(400, 560, 'pizzaTorso');
         
         // Make it bounce off of the world bounds.
         this.bouncy.body.collideWorldBounds = true;
