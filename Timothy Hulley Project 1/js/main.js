@@ -158,8 +158,6 @@ function create ()
                 case DOWN:
                     this.headPosition.y = Phaser.Math.Wrap(this.headPosition.y + 1, 0, 30);
                     break;
-				case NONE:
-					break;
             }
 
             this.direction = this.heading;
@@ -237,7 +235,7 @@ function create ()
 
     food = new Food(this, 3, 4);
 
-    snake = new Snake(this, 20, 25);
+    snake = new Snake(this, 19, 26);
 
     //  Create our keyboard controls
     cursors = this.input.keyboard.createCursorKeys();
