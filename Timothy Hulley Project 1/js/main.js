@@ -257,22 +257,22 @@ function update (time, delta)
     */
     if (cursors.left.isDown)
     {
-        dontMove == 0;
+        dontMove = 0;
 		snake.faceLeft();
     }
     else if (cursors.right.isDown)
     {
-        dontMove == 0;
+        dontMove = 0;
 		snake.faceRight();
     }
     else if (cursors.up.isDown)
     {
-        dontMove == 0;
+        dontMove = 0;
 		snake.faceUp();
     }
     else if (cursors.down.isDown)
     {
-        dontMove == 0;
+        dontMove = 0;
 		snake.faceDown();
     }
 
