@@ -30,7 +30,7 @@ function preload ()
 {
     this.load.image('food', 'assets/Pizza dude-1.png.png');
     this.load.image('body', 'assets/Pizza dude-2.png.png');
-	this.loud.image('middle', 'assets/Pizza dude-3.png.png');
+	this.load.image('middle', 'assets/Pizza dude-3.png.png');
 	this.load.image('sky', 'assets/sky.png' );
 }
 
