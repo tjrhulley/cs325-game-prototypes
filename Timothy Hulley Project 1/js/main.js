@@ -3,7 +3,7 @@ import "./phaser.js";
 // Snake by Patrick OReilly and Richard Davey
 // Twitter: @pato_reilly Web: http://patricko.byethost9.com
 
-var game = new Phaser.Game(800, 600, Phaser.CANVAS, 'phaser-example', { preload: preload, create: create, update: update,render : render });
+const game = new Phaser.Game(800, 600, Phaser.AUTO, 'phaser-example', { preload: preload, create: create, update: update,render : render });
 
 function preload() {
 
