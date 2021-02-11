@@ -5,7 +5,7 @@ var config = {
     type: Phaser.WEBGL,
     width: 640,
     height: 480,
-    parent: 'phaser-example',
+    parent: 'game',
     scene: {
         preload: preload,
         create: create,
