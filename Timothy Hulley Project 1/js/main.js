@@ -70,7 +70,7 @@ function create ()
 
         function Snake (scene, x, y)
         {
-            this.headPosition = new Phaser.Geom.Point(x, y);
+            this.headPosition = new Phaser.Geom.Point(320, 440);
 
             this.body = scene.add.group();
 
