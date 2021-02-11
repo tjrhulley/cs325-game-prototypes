@@ -35,9 +35,11 @@ var game = new Phaser.Game(config);
 
 function preload ()
 {
-    this.load.image('food', 'assets/Pizza dude-1.png.png');
-    this.load.image('body', 'assets/Pizza dude-2.png.png');
-	this.load.image('middle', 'assets/Pizza dude-3.png.png');
+    this.load.image('food', 'assets/Pizza_0.png');
+    this.load.image('body', 'assets/Pizza_1.png');
+	this.load.image('middle', 'assets/Pizza_2.png');
+	this.load.image('house', 'assets/Pizza_3.png');
+	this.load.image('pizza', 'assets/Pizza_4.png');
 	this.load.image('sky', 'assets/sky.png' );
 }
 
@@ -45,7 +47,7 @@ function create ()
 {
 	this.add.image(320, 240, 'sky');
 	legs = this.add.image(320, 464, 'food');
-	scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
+	scoreText = this.add.text(48, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
 	
     var Food = new Phaser.Class({
 
@@ -57,7 +59,7 @@ function create ()
         {
             Phaser.GameObjects.Image.call(this, scene)
 
-            this.setTexture('food');
+            this.setTexture('house');
             this.setPosition(x * 16, y * 16);
             this.setOrigin(0);
 
@@ -331,7 +333,7 @@ function update (time, delta)
 			snake.resetSnake();
 			legs.setPosition((snake.x - 16) * 1, (snake.y - 16) * 1);
             toReset = 3;
-			dontMove = 1;
+			//dontMove = 1;
         }
     }
 }
