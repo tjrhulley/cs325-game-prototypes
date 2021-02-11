@@ -191,7 +191,7 @@ function create ()
 
         grow: function ()
         {
-            var newPart = this.body.create(this.tail.x, this.tail.y, 'middle');
+            var newPart = this.body.create(this.tail.x, this.tail.y, 'body');
 
             newPart.setOrigin(0);
         },
