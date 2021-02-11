@@ -55,7 +55,7 @@ function create() {
 }
 
 function update() {
-
+/*
 	if (cursors.left.isDown) {
 		pizzaDude.setVelocityX(-160);
 	} 
@@ -68,7 +68,7 @@ function update() {
 	else if (cursors.down.isDown) {
 		pizzaDude.setVelocityY(160);
 	}
-
+*/
 	/*
     snakeHead.body.velocity.setTo(0, 0);
     snakeHead.body.angularVelocity = 0;
