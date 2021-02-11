@@ -72,6 +72,8 @@ function create ()
         {
             this.lootGet = true;
 			this.total++;
+			score += 10;
+			scoreText.setText('Score: ' + score);
         }
 
     });
