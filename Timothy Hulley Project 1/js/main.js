@@ -14,7 +14,9 @@ var config = {
 };
 
 var snake;
-var food;
+var food1;
+var food2;
+var food3;
 var cursors;
 
 //  Direction consts
@@ -23,6 +25,7 @@ var DOWN = 1;
 var LEFT = 2;
 var RIGHT = 3;
 var dontMove = 1;
+var toReset = 3;
 
 var game = new Phaser.Game(config);
 
@@ -54,13 +57,16 @@ function create ()
             this.setOrigin(0);
 
             this.total = 0;
+			
+			this.lootGet = false;
 
             scene.children.add(this);
         },
 
         eat: function ()
         {
-            this.total++;
+            this.lootGet = true;
+			this.total++;
         }
 
     });
@@ -200,9 +206,10 @@ function create ()
         {
             if (this.head.x === food.x && this.head.y === food.y)
             {
-                this.grow();
-
                 food.eat();
+				
+				food.eat();
+                food.setPosition(-25, -25);
 
                 //  For every 5 items of food eaten we'll increase the snake speed a little
                 if (this.speed > 20 && food.total % 5 === 0)
@@ -235,7 +242,9 @@ function create ()
 
     });
 
-    food = new Food(this, 3, 4);
+    food1 = new Food(this, 10, 8);
+    food2 = new Food(this, 20, 6);
+    food3 = new Food(this, 30, 8);
 
     snake = new Snake(this, 18, 26);
 
@@ -286,9 +295,24 @@ function update (time, delta)
     {
         //  If the snake updated, we need to check for collision against food
 
-        if (snake.collideWithFood(food))
+        if (snake.collideWithFood(food1))
         {
-            repositionFood();
+            toReset -= 1;           
+        }
+        if (snake.collideWithFood(food2))
+        {
+            toReset -= 1;           
+        }
+        if (snake.collideWithFood(food3))
+        {
+           toReset -= 1;            
+        }
+        if (toReset <= 0)
+        {
+            repositionFood(food1);
+            repositionFood(food2);
+            repositionFood(food3);
+            toReset = 3;
         }
     }
 }
@@ -302,7 +326,7 @@ function update (time, delta)
 * @method repositionFood
 * @return {boolean} true if the food was placed, otherwise false
 */
-function repositionFood ()
+function repositionFood (food)
 {
     //  First create an array that assumes all positions
     //  are valid for the new piece of food
