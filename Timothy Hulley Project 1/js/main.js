@@ -184,7 +184,7 @@ function create ()
                     break;
 
                 case RIGHT:
-                    this.headPosition.x = Phaser.Math.Wrap(this.headPosition.x + 1, -2, 38);
+                    this.headPosition.x = Phaser.Math.Wrap(this.headPosition.x + 1, 2, 42);
                     break;
 
                 case UP:
@@ -192,7 +192,7 @@ function create ()
                     break;
 
                 case DOWN:
-                    this.headPosition.y = Phaser.Math.Wrap(this.headPosition.y + 1, -2, 28);
+                    this.headPosition.y = Phaser.Math.Wrap(this.headPosition.y + 1, 2, 32);
                     break;
             }
 
