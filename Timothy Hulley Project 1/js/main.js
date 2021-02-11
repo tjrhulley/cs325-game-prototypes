@@ -114,7 +114,7 @@ function create ()
 
             this.alive = true;
 
-            this.speed = 150;
+            this.speed = 50;
 
             this.moveTime = 0;
 
