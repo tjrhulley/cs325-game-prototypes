@@ -51,7 +51,7 @@ function create ()
 
             this.setTexture('food');
             this.setPosition(x * 16, y * 16);
-            this.setOrigin(5);
+            this.setOrigin(0);
 
             this.total = 0;
 
@@ -76,7 +76,7 @@ function create ()
             this.body = scene.add.group();
 
             this.head = this.body.create(x * 16, y * 16, 'body');
-            this.head.setOrigin(0);
+            this.head.setOrigin(5);
 
             this.alive = true;
 
