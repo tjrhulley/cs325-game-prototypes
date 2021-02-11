@@ -17,8 +17,6 @@ class MyScene extends Phaser.Scene {
         super();
         
         this.bouncy = null;
-		
-		var player;
     }
     
     preload() {
@@ -26,6 +24,8 @@ class MyScene extends Phaser.Scene {
         this.load.image( 'logo', 'assets/sky.png' );
 		this.load.image( 'pizzaLegs', 'assets/Pizza dude-1.png.png' );
 		this.load.image( 'pizzaTorso', 'assets/Pizza dude-2.png.png' );
+		
+		var player;
     }
 	
     create() {
