@@ -51,7 +51,7 @@ function create ()
 
             this.setTexture('food');
             this.setPosition(x * 16, y * 16);
-            this.setOrigin(0);
+            this.setOrigin(5);
 
             this.total = 0;
 
