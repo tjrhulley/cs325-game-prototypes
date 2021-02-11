@@ -22,7 +22,7 @@ var UP = 0;
 var DOWN = 1;
 var LEFT = 2;
 var RIGHT = 3;
-var pizzaSpeed = 0;
+var dontMove = 1;
 
 var game = new Phaser.Game(config);
 
@@ -91,10 +91,13 @@ function create ()
 
         update: function (time)
         {
-            if (time >= this.moveTime)
+            if (dontMove == 0)
             {
-                return this.move(time);
-            }
+				if (time >= this.moveTime)
+				{
+					return this.move(time);
+				}
+			}
         },
 
         faceLeft: function ()
@@ -234,7 +237,7 @@ function create ()
 
     food = new Food(this, 3, 4);
 
-    snake = new Snake(this, 8, 8);
+    snake = new Snake(this, 20, 25);
 
     //  Create our keyboard controls
     cursors = this.input.keyboard.createCursorKeys();
@@ -256,22 +259,22 @@ function update (time, delta)
     */
     if (cursors.left.isDown)
     {
-        pizzaSpeed = 100;
+        dontMove == 0;
 		snake.faceLeft();
     }
     else if (cursors.right.isDown)
     {
-        pizzaSpeed = 100;
+        dontMove == 0;
 		snake.faceRight();
     }
     else if (cursors.up.isDown)
     {
-        pizzaSpeed = 100;
+        dontMove == 0;
 		snake.faceUp();
     }
     else if (cursors.down.isDown)
     {
-        pizzaSpeed = 100;
+        dontMove == 0;
 		snake.faceDown();
     }
 
