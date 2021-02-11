@@ -250,10 +250,10 @@ function create ()
 		resetSnake: function ()
         {
             this.body.clear(true);
-            this.head = this.body.create(snake.pos.x, snake.pos.y, 'body');
+            this.head = this.body.create(snake.x, snake.y, 'body');
             this.head.setOrigin(0);
-            this.tail = new Phaser.Geom.Point(snake.pos.x, snake.pos.y);
-			legs.setPosition(snake.pos.x, snake.pos.y);
+            this.tail = new Phaser.Geom.Point(snake.x, snake.y);
+			legs.setPosition(snake.x, snake.y);
         }
 
     });
