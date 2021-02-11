@@ -1,3 +1,5 @@
+import "./phaser.js";
+
 // Snake by Patrick OReilly and Richard Davey
 // Twitter: @pato_reilly Web: http://patricko.byethost9.com
 
