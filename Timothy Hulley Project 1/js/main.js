@@ -362,7 +362,7 @@ function update (time, delta)
 			repositionFood(food4);
 			snake.resetSnake();
 			legs.setPosition((snake.x - 16) * 1, (snake.y - 16) * 1);
-            toReset = 3;
+            toReset = 4;
 			//dontMove = 1;
         }
     }
