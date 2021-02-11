@@ -252,6 +252,7 @@ function create ()
 		resetSnake: function ()
         {
             this.body.clear(true);
+			this.headPosition = new Phaser.Geom.Point(snake.x, snake.y);
             this.head = this.body.create(snake.x, snake.y, 'body');
             this.head.setOrigin(0);
             this.tail = new Phaser.Geom.Point(snake.x, snake.y);
