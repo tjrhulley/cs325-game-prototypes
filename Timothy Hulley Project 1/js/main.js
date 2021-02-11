@@ -385,11 +385,11 @@ function repositionFood (food)
     //  A Grid we'll use to reposition the food each time it's eaten
     var testGrid = [];
 
-    for (var y = 2; y < 30; y++)
+    for (var y = 0; y < 30; y++)
     {
         testGrid[y] = [];
 
-        for (var x = 2; x < 40; x++)
+        for (var x = 0; x < 40; x++)
         {
             testGrid[y][x] = true;
         }
@@ -400,9 +400,9 @@ function repositionFood (food)
     //  Purge out false positions
     var validLocations = [];
 
-    for (var y = 2; y < 30; y++)
+    for (var y = 0; y < 30; y++)
     {
-        for (var x = 2; x < 40; x++)
+        for (var x = 0; x < 40; x++)
         {
             if (testGrid[y][x] === true)
             {
