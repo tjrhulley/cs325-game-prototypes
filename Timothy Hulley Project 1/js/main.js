@@ -25,13 +25,17 @@ class MyScene extends Phaser.Scene {
 		this.load.image( 'pizzaLegs', 'assets/Pizza dude-1.png.png' );
 		this.load.image( 'pizzaTorso', 'assets/Pizza dude-2.png.png' );
 		
-		var player;
+		
     }
+	
+	var player;
 	
     create() {
         // Create a sprite at the center of the screen using the 'logo' image.
         this.add.image(400, 300, 'logo');
 		this.add.image(400, 584, 'pizzaLegs');
+		
+		
 		
 		player = this.add.image(400, 560, 'pizzaTorso');
         
