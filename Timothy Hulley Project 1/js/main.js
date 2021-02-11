@@ -180,7 +180,7 @@ function create ()
             switch (this.heading)
             {
                 case LEFT:
-                    this.headPosition.x = Phaser.Math.Wrap(this.headPosition.x - 0.5, 0, 40);
+                    this.headPosition.x = Phaser.Math.Wrap(this.headPosition.x - 1, -20, 40);
                     break;
 
                 case RIGHT:
