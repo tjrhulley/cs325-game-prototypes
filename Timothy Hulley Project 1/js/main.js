@@ -244,9 +244,9 @@ function create ()
 		resetSnake: function ()
         {
             this.body.clear(true);
-            this.head = this.body.create(18 * 16, 26 * 16, 'body');
+            this.head = this.body.create(snake.x, snake.y, 'body');
             this.head.setOrigin(0);
-            this.tail = new Phaser.Geom.Point(18, 26);
+            this.tail = new Phaser.Geom.Point(snake.x, snake.y);
         }
 
     });
@@ -263,6 +263,8 @@ function create ()
             this.setTexture('food');
 			this.setPosition(x * 16, y * 16);
             this.setOrigin(0);
+			
+			scene.children.add(this);
 		}
 	});
 
@@ -271,7 +273,7 @@ function create ()
     food3 = new Food(this, 30, 8);
 
     snake = new Snake(this, 18, 26);
-	legs = new Legs(this, snake.x - 16, snake.y - 16);
+	legs = new Legs(this, snake.x - 1, snake.y - 1);
 
     //  Create our keyboard controls
     cursors = this.input.keyboard.createCursorKeys();
@@ -338,7 +340,7 @@ function update (time, delta)
             repositionFood(food2);
             repositionFood(food3);
 			snake.resetSnake();
-			legs.setPosition((snake.x - 16) * 16, (snake.y - 16));
+			legs.setPosition((snake.x - 16) * 1, (snake.y - 16) * 1);
             toReset = 3;
 			dontMove = 1;
         }
