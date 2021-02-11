@@ -22,12 +22,14 @@ class MyScene extends Phaser.Scene {
     preload() {
         // Load an image and call it 'logo'.
         this.load.image( 'logo', 'assets/sky.png' );
-		
+		this.load.image( 'pizzaLegs', 'assets/Pizza dude-1.png.png' );
+		this.load.image( 'pizzaTorso', 'assets/Pizza dude-2.png.png' );
     }
     
     create() {
         // Create a sprite at the center of the screen using the 'logo' image.
-        this.add.image(400, 300, 'skyTEMP');
+        this.add.image(400, 300, 'logo');
+		this.add.image(400, 584, 'pizzaLegs');
         
         // Make it bounce off of the world bounds.
         this.bouncy.body.collideWorldBounds = true;
