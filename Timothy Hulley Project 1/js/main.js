@@ -17,6 +17,8 @@ class MyScene extends Phaser.Scene {
         super();
         
         this.bouncy = null;
+		
+		var player;
     }
     
     preload() {
@@ -26,8 +28,6 @@ class MyScene extends Phaser.Scene {
 		this.load.image( 'pizzaTorso', 'assets/Pizza dude-2.png.png' );
     }
 	
-	var player;
-    
     create() {
         // Create a sprite at the center of the screen using the 'logo' image.
         this.add.image(400, 300, 'logo');
