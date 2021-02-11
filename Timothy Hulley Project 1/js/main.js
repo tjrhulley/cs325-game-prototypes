@@ -77,6 +77,7 @@ function create ()
 
             this.head = this.body.create(x * 16, y * 16, 'body');
             this.head.setOrigin(0);
+			this.head.anchor.setTo(0.5);
 
             this.alive = true;
 
