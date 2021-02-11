@@ -181,7 +181,7 @@ function create ()
             this.direction = this.heading;
 
             //  Update the body segments and place the last coordinate into this.tail
-            Phaser.Actions.ShiftPosition(this.body.getChildren(), this.headPosition.x, this.headPosition.y, 1, this.tail);
+            Phaser.Actions.ShiftPosition(this.body.getChildren(), this.headPosition.x * 16, this.headPosition.y * 16, 1, this.tail);
 
             //  Check to see if any of the body pieces have the same x/y as the head
             //  If they do, the head ran into the body
@@ -265,7 +265,7 @@ function create ()
     food2 = new Food(this, 20, 6);
     food3 = new Food(this, 30, 8);
 
-    snake = new Snake(this, 18, 26);
+    snake = new Snake(this, 16, 26);
 
     //  Create our keyboard controls
     cursors = this.input.keyboard.createCursorKeys();
