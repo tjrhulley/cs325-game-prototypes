@@ -59,16 +59,16 @@ class MyScene extends Phaser.Scene {
         // new trajectory.
         this.bouncy.rotation = this.physics.accelerateToObject( this.bouncy, this.input.activePointer, 500, 500, 500 );
 		if (cursors.left.isDown) {
-			pizzaDude.setVelocityX(-160);
+			player.setVelocityX(-160);
 		} 
 		else if (cursors.right.isDown) {
-			pizzaDude.setVelocityX(160);
+			player.setVelocityX(160);
 		}
 		else if (cursors.up.isDown) {
-			pizzaDude.setVelocityY(-160);
+			player.setVelocityY(-160);
 		}
 		else if (cursors.down.isDown) {
-			pizzaDude.setVelocityY(160);
+			player.setVelocityY(160);
 		}
     }
 }
