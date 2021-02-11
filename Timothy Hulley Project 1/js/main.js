@@ -57,7 +57,7 @@ function create ()
         {
             Phaser.GameObjects.Image.call(this, scene)
 
-            this.add.image(320, 464, 'food');
+            this.setTexture('food');
             this.setPosition(x, y);
             this.setOrigin(0);
 
