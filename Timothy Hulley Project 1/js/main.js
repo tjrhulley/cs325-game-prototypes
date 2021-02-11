@@ -14,6 +14,7 @@ var config = {
 };
 
 var snake;
+var legs;
 var food1;
 var food2;
 var food3;
@@ -40,7 +41,7 @@ function preload ()
 function create ()
 {
 	this.add.image(320, 240, 'sky');
-	this.add.image(320, 464, 'food');
+	//this.add.image(320, 464, 'food');
 	
     var Food = new Phaser.Class({
 
@@ -249,12 +250,28 @@ function create ()
         }
 
     });
+	
+	var Legs = new Phaser.Class({
+		
+		Extends: Phaser.GameObjects.Image,
+
+        initialize:
+		
+		function Legs (scene, x, y) {
+			Phaser.GameObjects.Image.call(this, scene)
+
+            this.setTexture('food');
+			this.setPosition(x * 16, y * 16);
+            this.setOrigin(0);
+		}
+	});
 
     food1 = new Food(this, 10, 8);
     food2 = new Food(this, 20, 6);
     food3 = new Food(this, 30, 8);
 
     snake = new Snake(this, 18, 26);
+	legs = new Legs(this, snake.x - 16, snake.y - 16);
 
     //  Create our keyboard controls
     cursors = this.input.keyboard.createCursorKeys();
@@ -321,6 +338,7 @@ function update (time, delta)
             repositionFood(food2);
             repositionFood(food3);
 			snake.resetSnake();
+			legs.setPosition((snake.x - 16) * 16, (snake.y - 16));
             toReset = 3;
 			dontMove = 1;
         }
