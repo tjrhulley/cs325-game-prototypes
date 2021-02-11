@@ -37,7 +37,7 @@ class MyScene extends Phaser.Scene {
 		
 		
 		
-		player = this.add.image(400, 560, 'pizzaTorso');
+		player = this.add.sprite(400, 560, 'pizzaTorso');
         
         // Make it bounce off of the world bounds.
         this.bouncy.body.collideWorldBounds = true;
