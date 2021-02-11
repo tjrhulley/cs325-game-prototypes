@@ -28,6 +28,9 @@ var RIGHT = 3;
 var dontMove = 1;
 var toReset = 3;
 
+var score = 0;
+var scoreText;
+
 var game = new Phaser.Game(config);
 
 function preload ()
@@ -42,6 +45,7 @@ function create ()
 {
 	this.add.image(320, 240, 'sky');
 	//this.add.image(320, 464, 'food');
+	scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
 	
     var Food = new Phaser.Class({
 
@@ -273,7 +277,7 @@ function create ()
     food3 = new Food(this, 30, 8);
 
     snake = new Snake(this, 18, 26);
-	legs = new Legs(this, snake.x - 1, snake.y - 1);
+	legs = new Legs(this, 320, 240);
 
     //  Create our keyboard controls
     cursors = this.input.keyboard.createCursorKeys();
