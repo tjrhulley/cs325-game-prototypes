@@ -57,8 +57,8 @@ function create ()
         {
             Phaser.GameObjects.Image.call(this, scene)
 
-            this.setTexture('food');
-            this.setPosition(x * 16, y * 16);
+            this.add.image(320, 464, 'food');
+            this.setPosition(x, y);
             this.setOrigin(0);
 
             this.total = 0;
@@ -72,7 +72,7 @@ function create ()
         {
             this.lootGet = true;
 			this.total++;
-			score += 10;
+			score += 50;
 			scoreText.setText('Score: ' + score);
         }
 
@@ -216,7 +216,7 @@ function create ()
                 food.eat();
 				
 				food.eat();
-                food.setPosition(-25, -25);
+                food.setPosition(-50, -50);
 
                 //  For every 5 items of food eaten we'll increase the snake speed a little
                 if (this.speed > 20 && food.total % 5 === 0)
@@ -250,9 +250,10 @@ function create ()
 		resetSnake: function ()
         {
             this.body.clear(true);
-            //this.head = this.body.create(snake.x, snake.y, 'body');
-            //this.head.setOrigin(0);
-            //this.tail = new Phaser.Geom.Point(snake.x, snake.y);
+            this.head = this.body.create(snake.pos.x, snake.pos.y, 'body');
+            this.head.setOrigin(0);
+            this.tail = new Phaser.Geom.Point(snake.pos.x, snake.pos.y);
+			legs.setPosition(snake.pos.x, snake.pos.y);
         }
 
     });
@@ -302,25 +303,25 @@ function update (time, delta)
     if (cursors.left.isDown)
     {
         dontMove = 0;
-		snake.head.angle = -90;
+		//snake.head.angle = -90;
 		snake.faceLeft();
     }
     else if (cursors.right.isDown)
     {
         dontMove = 0;
-		snake.head.angle = 90;
+		//snake.head.angle = 90;
 		snake.faceRight();
     }
     else if (cursors.up.isDown)
     {
         dontMove = 0;
-		snake.head.angle = 0;
+		//snake.head.angle = 0;
 		snake.faceUp();
     }
     else if (cursors.down.isDown)
     {
         dontMove = 0;
-		snake.head.angle = 180;
+		//snake.head.angle = 180;
 		snake.faceDown();
     }
 
