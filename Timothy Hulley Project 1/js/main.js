@@ -235,7 +235,7 @@ function create ()
 
     food = new Food(this, 3, 4);
 
-    snake = new Snake(this, 19, 26);
+    snake = new Snake(this, 18, 26);
 
     //  Create our keyboard controls
     cursors = this.input.keyboard.createCursorKeys();
