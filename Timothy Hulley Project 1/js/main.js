@@ -37,7 +37,7 @@ function preload ()
 function create ()
 {
 	this.add.image(400, 300, 'sky');
-	this.add.image(400, 584, 'pizzaLegs');
+	this.add.image(400, 584, 'food');
 	
     var Food = new Phaser.Class({
 
@@ -86,8 +86,8 @@ function create ()
 
             this.tail = new Phaser.Geom.Point(x, y);
 
-            this.heading = RIGHT;
-            this.direction = RIGHT;
+            this.heading = NONE;
+            this.direction = UP;
         },
 
         update: function (time)
@@ -156,6 +156,8 @@ function create ()
                 case DOWN:
                     this.headPosition.y = Phaser.Math.Wrap(this.headPosition.y + 1, 0, 30);
                     break;
+				case NONE:
+					break;
             }
 
             this.direction = this.heading;
