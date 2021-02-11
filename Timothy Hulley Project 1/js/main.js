@@ -59,9 +59,9 @@ function create ()
 	legs = this.add.image(320, 464, 'food');
 	scoreText = this.add.text(48, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
 	
-	get1 = this.add.audio('coin1');
-	get2 = this.add.audio('coin3');
-	death = this.add.audio('death');
+	get1 = this.sound.add('coin1');
+	get2 = this.sound.add('coin3');
+	death = this.sound.add('death');
 	
     var Food = new Phaser.Class({
 
