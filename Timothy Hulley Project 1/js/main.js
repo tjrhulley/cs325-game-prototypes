@@ -80,7 +80,7 @@ function create ()
 
             this.alive = true;
 
-            this.speed = pizzaSpeed;
+            this.speed = 100;
 
             this.moveTime = 0;
 
