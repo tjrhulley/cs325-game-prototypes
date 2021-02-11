@@ -76,7 +76,7 @@ function create ()
             this.body = scene.add.group();
 
             this.head = this.body.create(x * 16, y * 16, 'body');
-            this.head.setOrigin(5);
+            this.head.setOrigin(0);
 
             this.alive = true;
 
