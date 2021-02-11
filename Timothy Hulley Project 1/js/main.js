@@ -31,6 +31,10 @@ var toReset = 3;
 var score = 0;
 var scoreText;
 
+var get1;
+var get2;
+var death;
+
 var game = new Phaser.Game(config);
 
 function preload ()
@@ -41,6 +45,11 @@ function preload ()
 	this.load.image('house', 'assets/Pizza_3.png');
 	this.load.image('pizza', 'assets/Pizza_4.png');
 	this.load.image('sky', 'assets/sky.png' );
+	
+	this.load.audio('coin1', 'assets/Get1.wav');
+	this.load.audio('coin2', 'assets/Get2.wav');
+	this.load.audio('coin3', 'assets/Get3.wav');
+	this.load.audio('death', 'assets/Explosion.wav');
 }
 
 function create ()
@@ -49,6 +58,10 @@ function create ()
 	this.add.image(16, 16, 'pizza');
 	legs = this.add.image(320, 464, 'food');
 	scoreText = this.add.text(48, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
+	
+	get1 = this.add.audio('coin1');
+	get2 = this.add.audio('coin3');
+	death = this.add.audio('death');
 	
     var Food = new Phaser.Class({
 
@@ -75,6 +88,10 @@ function create ()
         {
             this.lootGet = true;
 			this.total++;
+			if (toReset > 0) 
+			{
+				get1.play();
+			}
 			score += 50;
 			scoreText.setText('Score: ' + score);
         }
@@ -193,6 +210,10 @@ function create ()
                 console.log('dead');
 
                 this.alive = false;
+				
+				scoreText.setText('FINAL SCORE: ' + score);
+				
+				death.play();
 
                 return false;
             }
@@ -257,6 +278,7 @@ function create ()
             this.head.setOrigin(0);
             this.tail = new Phaser.Geom.Point(snake.x, snake.y);
 			legs.setPosition(snake.x, snake.y);
+			get2.play();
         }
 
     });
@@ -265,7 +287,7 @@ function create ()
     food2 = new Food(this, 20, 6);
     food3 = new Food(this, 30, 8);
 
-    snake = new Snake(this, 16, 26);
+    snake = new Snake(this, 18, 26);
 
     //  Create our keyboard controls
     cursors = this.input.keyboard.createCursorKeys();
