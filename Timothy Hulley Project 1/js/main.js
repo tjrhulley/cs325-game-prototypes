@@ -89,7 +89,7 @@ function create ()
         {
             this.lootGet = true;
 			this.total++;
-			if (toReset > 0) 
+			if (toReset > 0) //Why is this reseting?
 			{
 				get1.play();
 			}
