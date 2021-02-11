@@ -96,7 +96,7 @@ function create ()
             {
 				if (time >= this.moveTime)
 				{
-					this.grow;
+					this.grow();
 					return this.move(time);
 				}
 			}
@@ -191,7 +191,7 @@ function create ()
 
         grow: function ()
         {
-            var newPart = this.body.create(this.tail.x, this.tail.y, 'body');
+            var newPart = this.body.create(this.tail.x, this.tail.y, 'middle');
 
             newPart.setOrigin(0);
         },
