@@ -3,8 +3,8 @@ import "./phaser.js";
 // You can copy-and-paste the code from any of the examples at https://examples.phaser.io here.
 var config = {
     type: Phaser.WEBGL,
-    width: 640,
-    height: 480,
+    width: 800,
+    height: 600,
     backgroundColor: '#bfcc00',
     parent: 'phaser-example',
     scene: {
@@ -23,6 +23,7 @@ var UP = 0;
 var DOWN = 1;
 var LEFT = 2;
 var RIGHT = 3;
+var pizzaSpeed = 0;
 
 var game = new Phaser.Game(config);
 
@@ -30,10 +31,14 @@ function preload ()
 {
     this.load.image('food', 'assets/Pizza dude-1.png.png');
     this.load.image('body', 'assets/Pizza dude-2.png.png');
+	this.load.image('sky', 'assets/sky.png' );
 }
 
 function create ()
 {
+	this.add.image(400, 300, 'sky');
+	this.add.image(400, 584, 'pizzaLegs');
+	
     var Food = new Phaser.Class({
 
         Extends: Phaser.GameObjects.Image,
@@ -70,12 +75,12 @@ function create ()
 
             this.body = scene.add.group();
 
-            this.head = this.body.create(x * 16, y * 16, 'body');
+            this.head = this.body.create(400, 560, 'body');
             this.head.setOrigin(0);
 
             this.alive = true;
 
-            this.speed = 100;
+            this.speed = pizzaSpeed;
 
             this.moveTime = 0;
 
@@ -250,19 +255,23 @@ function update (time, delta)
     */
     if (cursors.left.isDown)
     {
-        snake.faceLeft();
+        pizzaSpeed = 100;
+		snake.faceLeft();
     }
     else if (cursors.right.isDown)
     {
-        snake.faceRight();
+        pizzaSpeed = 100;
+		snake.faceRight();
     }
     else if (cursors.up.isDown)
     {
-        snake.faceUp();
+        pizzaSpeed = 100;
+		snake.faceUp();
     }
     else if (cursors.down.isDown)
     {
-        snake.faceDown();
+        pizzaSpeed = 100;
+		snake.faceDown();
     }
 
     if (snake.update(time))
