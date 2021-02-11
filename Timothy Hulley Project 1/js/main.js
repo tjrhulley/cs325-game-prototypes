@@ -44,7 +44,7 @@ function preload ()
 function create ()
 {
 	this.add.image(320, 240, 'sky');
-	//this.add.image(320, 464, 'food');
+	legs = this.add.image(320, 464, 'food');
 	scoreText = this.add.text(16, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
 	
     var Food = new Phaser.Class({
@@ -257,30 +257,12 @@ function create ()
         }
 
     });
-	
-	var Legs = new Phaser.Class({
-		
-		Extends: Phaser.GameObjects.Image,
-
-        initialize:
-		
-		function Legs (scene, x, y) {
-			Phaser.GameObjects.Image.call(this, scene)
-
-            this.setTexture('food');
-			this.setPosition(x * 16, y * 16);
-            this.setOrigin(0);
-			
-			scene.children.add(this);
-		}
-	});
 
     food1 = new Food(this, 10, 8);
     food2 = new Food(this, 20, 6);
     food3 = new Food(this, 30, 8);
 
     snake = new Snake(this, 18, 26);
-	legs = new Legs(this, 320, 240);
 
     //  Create our keyboard controls
     cursors = this.input.keyboard.createCursorKeys();
