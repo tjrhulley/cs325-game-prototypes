@@ -46,8 +46,9 @@ function preload ()
 function create ()
 {
 	this.add.image(320, 240, 'sky');
+	this.add.image(16, 16, 'pizza');
 	legs = this.add.image(320, 464, 'food');
-	scoreText = this.add.text(0, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
+	scoreText = this.add.text(48, 16, 'score: 0', { fontSize: '32px', fill: '#000' });
 	
     var Food = new Phaser.Class({
 
@@ -180,7 +181,7 @@ function create ()
             this.direction = this.heading;
 
             //  Update the body segments and place the last coordinate into this.tail
-            Phaser.Actions.ShiftPosition(this.body.getChildren(), this.headPosition.x * 16, this.headPosition.y * 16, 1, this.tail);
+            Phaser.Actions.ShiftPosition(this.body.getChildren(), this.headPosition.x, this.headPosition.y, 1, this.tail);
 
             //  Check to see if any of the body pieces have the same x/y as the head
             //  If they do, the head ran into the body
