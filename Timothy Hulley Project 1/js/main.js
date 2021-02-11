@@ -238,6 +238,14 @@ function create ()
             });
 
             return grid;
+        },
+		
+		resetSnake: function ()
+        {
+            this.body.clear(true);
+            this.head = this.body.create(18 * 16, 26 * 16, 'body');
+            this.head.setOrigin(0);
+            this.tail = new Phaser.Geom.Point(18, 26);
         }
 
     });
@@ -312,7 +320,9 @@ function update (time, delta)
             repositionFood(food1);
             repositionFood(food2);
             repositionFood(food3);
+			snake.resetSnake();
             toReset = 3;
+			dontMove = 1;
         }
     }
 }
