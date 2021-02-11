@@ -94,9 +94,9 @@ function create ()
         {
             if (dontMove == 0)
             {
-				this.grow;
 				if (time >= this.moveTime)
 				{
+					this.grow;
 					return this.move(time);
 				}
 			}
