@@ -61,7 +61,7 @@ function preload ()
 function create ()
 {
     this.matter.world.setBounds(0, 0, 800, 600, 1, true, true, true, false);
-	this.matter.set60Hz();
+	this.matter.set30Hz();
 	
 	winSound = this.sound.add('win', { loop: false, volume: 0.5});;
 	loseSound = this.sound.add('lose', { loop: false, volume: 0.3});;
