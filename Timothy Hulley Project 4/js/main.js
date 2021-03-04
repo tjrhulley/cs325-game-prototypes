@@ -148,7 +148,7 @@ function update ()
 {
     if (!gameOver) {
 		timer++;
-		scoreTimer += 0.01;
+		scoreTimer += 0.02;
 		if (timer === 10) {
 			floor.y += 1;
 			step1.y += 1;

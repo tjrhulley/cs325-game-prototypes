@@ -2,7 +2,7 @@
 <html>
 <head>
 <meta charset="utf-8">
-<title>Hello! Amaze!</title>
+<title>The Quicksand Hotel</title>
 <style>
 body
 {
@@ -19,72 +19,95 @@ body
 <body>
 <div id="game"></div>
 <div id="readme">
-<h2>Your game title</h2>
+<h2>The Quicksand Hotel</h2>
 
 <ul>
 <li><strong>Originality:</strong>
-What is original about your game?
+Nobody has ever tried building a hotel on top of quicksand before!
 </li>
 
 <li><strong>Technical Merit:</strong>
-What is interesting about your game technology?
+This is the first game project I've made using matter physics instead of arcade. It also features a level and background elements that dynamically sink into the ground.
 </li>
 
 <li><strong>Prototype Postmortem:</strong>
-What did you learn from this prototype?
-What was the easiest or hardest part of making it?
+As I said above, the main thing I learned was how to use and configure matter physics objects, though really I feel like I've only scratched the surface of what they 
+can do. Getting these objects to work properly was the hardest part of creating this project for me. The other thing I learned was how to implement a sprite sheet and 
+create animations, which surprisingly was the easiest part of the project. 
 </li>
 
 <li><strong>Prototype Assets:</strong>
-Did you make your prototype assets from scratch? Did you borrow them? Cite your sources here.
+All of the art assets used were taken from various sources online. The winning and losing sounds were ripped from Super Punch Out and Mario Party.
 <ul>
-<li>Bouncing Phaser image: <a href="https://phaser.io/download/logo">Phaser logo</a></li>
+<li>Floor texture: <a href="https://www.myfreetextures.com/wooden-background-seamless-wood-floor/">Seamless wood floor from myfreetextures.com</a></li>
+<li>Character sprites: <a href="https://opengameart.org/content/classic-hero">Old hero by GrafxKid</a></li>
+<li>Luggage box: <a href="https://opengameart.org/content/box-2">Box by Alekei</a></li>
+<li>Background: <a href="https://www.myfreetextures.com/rendered-rough-wallpaper-paper-background-texture-2/">Rough Wallpaper from myfreetextures.com</a></li>
+<li>Door: <a href="https://opengameart.org/content/door-textures">Door Textures by BMacZero</a></li>
+<li>Hotel room sign: <a href="https://line.17qq.com/articles/fgdbodibz.html">Signs from line.17qq.com</a> (No idea what this website is. I got the pic off Google images)</li>
+<li>Hotel logo: <a href="https://www.makewordart.com/">Wordart generator</a></li>
+<li>Win sound: Super Punch Out (Gabby Jay's "yay")</li>
+<li>Lose sound: Mario Party (Wario's "oh my god!")</li>
 </ul>
 </li>
 
 <li><strong>Prototype Closest Other Game:</strong>
-Which other game most closely resembles your game? If you are borrowing code from a Phaser Example, you must say so here. If you borrow code from elsewhere, you must say so here.
+This prototype uses the phaser "first game" example as a base, and is most similar to that and other 2d platformers.
 </li>
 
 <li><strong>High Concept:</strong>
-A one-sentence summary of your game.
+This is a game where you have to lift a heavy package up stairs while they are rapidly sinking into the ground.
 </li>
 
 <li><strong>Theme:</strong>
-State which of the Storymatic themes you used.
+Absurdist.
 </li>
 
 <li><strong>Mandated Variety:</strong>
-State which input, randomness, genre, and play style you used in this prototype.
+The game is a 2D platformer with standard controls: left and right to move, and up to jump. While not exactly random, the physics of the luggage (as well as the bounciness 
+of it) can make it's movements hard to predict.
 </li>
 
 <li><strong>Prototype Goal:</strong>
-What game mechanic is this prototype evaluating?
+This prototype is mainly evaluating matter physics objects and how they can be used in gameplay. It also evaluates time pressure situations.
 </li>
 
 <li><strong>Player Experience Goals:</strong>
-What experience do you want players to have when playing your game?
+I want players to experience the tension of trying to solve a difficult task under time pressure. Players will try and try again until they have a consistant feel for 
+how the box can be moved, and afterwards try to compete against each other for the fastest time.
 </li>
 
 <li><strong>Gameplay:</strong>
-A paragraph describing the actions the player can perform, the system dynamics, and the core mechanic. Include a concise explanation of the prototype’s inputs and their expected effects (how to play). You can also describe game play that is not in the prototype. You may include mock-up images for parts of the game not in the prototype.
+Players take control of the bellhop as he tries to bring luggage to the room at the top of the stairs. The issue is that the only inputs they have are moving and jumping.
+In order to move the box, all that needs to be done is to push it using your body. Whether it be launching it in the air or balancing it on your head, the player's main 
+way of interacting with the box is by moving it with the bellhop's body. At the same time, the floor and stairs are slowly sinking down. If either the luggage or the player 
+fall in, it's game over! To win, one must push the box to the door. Afterwards, they will be shown the time it took to finish the game, incentivizing them to try again.
+
+Later game builds will feature more levels with different floor layouts and obsticles to get past in order to deliver the luggage. Players can also earn prizes and rewards 
+for beating levels under a "par" time.
 </li>
 
 <li><strong>Strategies:</strong>
-What player strategies do you expect will be effective at playing this game?
+There are a few different ways the box can be brought up the stairs. Players might try gently carrying it on their heads, pushing it up the stairs, or lifting it high 
+and pushing it similar to a volley ball. Obviously players won't stick soley to one method if the box falls over, so being adaptable is key! At the same time, I image 
+that if people play it enough they'll come up with a consistant way of beating the game on their own and try repeating that strategy until they get the best time they can.
 </li>
 
 <li><strong>Story/Setting/Premise:</strong>
-A paragraph about the world your game is set in and who the characters are. What makes the game world and its occupants unique and interesting? Do the tokens represent something? If the game has a backstory, mention it here. If the game is abstract, then say so.
-How will the dramatic tension interact with the gameplay tension?
+Welcome to the Quicksand Hotel! A thrilling resort where guests can enjoy the excitement of slowly sinking into the earth with no way to stop it. 
+It is the latest in the line of disaster themed establishments, including Earthquake Park and <a href="https://www.youtube.com/watch?v=rgCH2zb-x_I">Club Tornado</a>.
+
+As one of the bellhops, it is your job to bring luggage to the guests’ rooms before they have completely sunken in. 
+Some of the guests are a bit cheeky though, putting their luggage in heavy wooden crates just to screw with you. 
+Can you push it up the stairs in time, or will you soon realize why very few people actually work at the Quicksand Hotel?
 </li>
 
 <li><strong>Target Audience:</strong>
-A single sentence that describes the demographic you're trying to reach.
+Arcade game fans and quicksand enthusiasts.
 </li>
 
 <li><strong>Play Time:</strong>
-How long does your game take to play?
+A round should only take less than a minute to play (that floor sinks fast!), but you can keep playing over and over again to get a better time.
 </li>
 
 </ul>
