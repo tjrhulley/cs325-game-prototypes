@@ -40,6 +40,8 @@ function create ()
     player = this.physics.add.sprite(100, 450, 'car');
 	
     player.setCollideWorldBounds(true);
+	
+	cursors = this.input.keyboard.createCursorKeys();
 }
 
 function update ()
