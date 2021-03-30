@@ -36,7 +36,7 @@ function create ()
     // platforms.create(50, 250, 'ground');
     // platforms.create(750, 220, 'ground');
 
-    player = this.add.sprite(100, 450, 'car');
+    player = this.physics.add.sprite(100, 450, 'car');
 	
     player.setCollideWorldBounds(true);
 }
