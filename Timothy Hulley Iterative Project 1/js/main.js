@@ -20,6 +20,7 @@ var config = {
 };
 
 var player;
+var cursors;
 
 var game = new Phaser.Game(config);
 
