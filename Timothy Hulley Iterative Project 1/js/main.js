@@ -41,7 +41,7 @@ var gameStep = 0;
 var objPos = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
 var objGroup;
 var objTracker = 0;
-var moneyPos = [0, 0, 0, 0, 0, 0, 0, 0, 0, 0];
+var moneyPos = [400, 400, 400, 400, 400, 400, 400, 400, 400, 400];
 var moneyGroup;
 var moneyTracker = 0;
 var timer = 0;
