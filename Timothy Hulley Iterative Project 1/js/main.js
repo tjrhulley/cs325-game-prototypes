@@ -24,10 +24,6 @@ var config = {
 //Game objects
 var player;
 
-//Hud stuff
-var score = 0;
-var roadGif;
-
 //Game systems
 const minRoad = 200;
 const maxRoad = 600;
@@ -52,7 +48,15 @@ var timer = 0;
 var timedEvent1;
 var timedEvent2;
 
-var DEBUGtext;
+//Hud stuff
+var score = 0;
+var hudTime = maxTime;
+var roadGif;
+var scoreText;
+var timeText;
+var infoText;
+
+//var DEBUGtext;
 
 var game = new Phaser.Game(config);
 
@@ -91,8 +95,8 @@ function create ()
 	this.physics.world.setBoundsCollision(true, true, false, false);
 
     player = this.physics.add.image(400, 450, 'car');
-	
     player.setCollideWorldBounds(true);
+	player.body.setBoundsRectangle(new Phaser.Geom.Rectangle(200, 150, 400, 500));
 	player.setScale(0.2);
 	player.setVelocityY(0);
 	
@@ -117,6 +121,7 @@ function create ()
 	
 	this.input.on('pointerup', function (pointer) {
 		if (gameStep === 0) {
+			
 			timedEvent1 = this.time.addEvent({
 				delay: 1000,
 				loop: true,
@@ -128,12 +133,23 @@ function create ()
 				loop: true,
 				callback: dropMoneyEvent
 			});
+			
+			infoText.setText('');
 			roadGif.setVisible(true);
 			gameStep++;
 		} else if (gameStep === 2) {
+			infoText.setText([
+				'You are a cop!',
+				'',
+				'Follow the robber\'s money trail!',
+				'Collect money to earn points!',
+				'-- Click to begin --'
+			]);
+			
 			player.y = -2000;
 			player = this.physics.add.image(400, 450, 'police');
 			player.setCollideWorldBounds(true);
+			player.body.setBoundsRectangle(new Phaser.Geom.Rectangle(200, 150, 400, 500));
 			player.setScale(0.2);
 			player.setVelocityY(0);
 			
@@ -142,8 +158,16 @@ function create ()
 			
 			objGroup.clear(true);
 			moneyGroup.clear(true);
+			hudTime = maxTime;
+			timeText.setText('Time: ' + hudTime);
+			score = 0;
+			scoreText.x = 16;
+			scoreText.setText('Score: ' + score);
+			
 			gameStep++;
 		} else if (gameStep === 3) {
+			infoText.setText('');
+			
 			timedEvent1 = this.time.addEvent({
 				delay: 1000,
 				loop: true,
@@ -161,7 +185,20 @@ function create ()
 		
 	}, this);
 	
-	DEBUGtext = this.add.text(16,16, '');
+	infoText = this.add.text(400, 300, '', { fontFamily: 'American Typewriter, serif', fontSize: '36px', fill: '#DEAD33', align: 'center' });
+	infoText.setOrigin(0.5);
+	infoText.setText([
+		'You are a robber!',
+		'',
+		'Flee from the cops until the timer ends.',
+		'Don\'t hit any obsticles!',
+		'-- Click to begin --'
+	]);
+	
+	timeText = this.add.text(16,16, 'Time: ' + hudTime);
+	scoreText = this.add.text(-160,32, 'Score: ' + score);
+	
+	//DEBUGtext = this.add.text(16,16, '');
 }
 
 function update ()
@@ -186,16 +223,21 @@ function update ()
 	if (gameStep === 1 || gameStep === 4) {
 		if (cursors.left.isDown)
 		{
-			player.setVelocityX(-200);
+			player.setVelocityX(-220);
 		}
 		else if (cursors.right.isDown)
 		{
-			player.setVelocityX(200);
+			player.setVelocityX(220);
 		}
 		else
 		{
 			player.setVelocityX(0);
 		}
+		
+		hudTime--;
+		score++;
+		timeText.setText('Time: ' + hudTime);
+		scoreText.setText('Score: ' + score);
 		timer++;
 		if (timer >= maxTime) {
 			crash();
@@ -229,6 +271,7 @@ function dropMoneyEvent ()
 	
 	money.setActive(true);
 	money.setVisible(true);
+	money.setScale(2);
 	
 	moneyTracker++;
 }
@@ -244,6 +287,7 @@ function spawnMoneyEvent ()
 	
 	money.setActive(true);
 	money.setVisible(true);
+	money.setScale(2);
 	
 	moneyTracker++;
 }
@@ -251,6 +295,27 @@ function spawnMoneyEvent ()
 function crash ()
 {
 	if (gameStep === 1 || gameStep === 4) {
+		if (gameStep === 1) {
+		if (timer >= maxTime) {
+			infoText.setText([
+				'You\'ve escaped the cops!!!',
+				'',
+				'--> Click to play stage 2! <--'
+			]);
+		} else {
+			infoText.setText([
+				'You have crashed!!!',
+				'',
+				'--> Click to play stage 2! <--'
+			]);
+		}
+		} else {
+			infoText.setText([
+				'Thank you for playing!',
+				'Final Score: ' + score
+			]);
+		}
+		
 		gameStep++;
 		player.setVelocityX(0);
 		timedEvent1.remove(false);
