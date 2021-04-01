@@ -1,1 +1,2 @@
 Obsticles that move on path, rather than go straight down.
+High score and ability to restart game rather than refresh!

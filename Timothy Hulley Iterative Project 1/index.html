@@ -19,31 +19,40 @@ body
 <body>
 <div id="game"></div>
 <div id="readme">
-<h2>Your game title</h2>
+<h2>Robber and Cop</h2>
 
 <ul>
 <li><strong>Originality:</strong>
-What is original about your game?
+You play both roles of a heist! First as the robber escaping police, then as the police officer chasing following your own trail.
+It requires some fast reflexes and memorization to play!
 </li>
 
 <li><strong>Technical Merit:</strong>
-What is interesting about your game technology?
+The game randomly decides where each obstacle will go, and also remembers the locations of each coin that is dropped. These locations are saved and accessed in arrays.
+
+The scrolling background is also just an illusion. It's just a gif of the road moving while your car is stationary.
 </li>
 
 <li><strong>Prototype Postmortem:</strong>
-What did you learn from this prototype?
-What was the easiest or hardest part of making it?
+I learned a couple of minor things in this project. How to use arrays, create custom bounds, and how to manage groups of objects.
+-The easiest part was randomly spawning cones and making sure the coins spawned correctly.
+-The hardest part was getting the collision to work between the cones and the car, though that didn't take too long to adjust.
 </li>
 
 <li><strong>Prototype Assets:</strong>
-Did you make your prototype assets from scratch? Did you borrow them? Cite your sources here.
+All art assets are taken from other sources.
 <ul>
-<li>Bouncing Phaser image: <a href="https://phaser.io/download/logo">Phaser logo</a></li>
+<li>Robber's car: <a href="https://opengameart.org/content/red-car">Red Car by lawrence_laz</a></li>
+<li>Police car: <a href="https://opengameart.org/content/police-cars">Police Cars by clayster2012</a></li>
+<li>Traffic cone: <a href="http://pixelartmaker.com/art/41f48a29361a9f8">Traffic cone on pixelartmaker.com</a></li>
+<li>Money: <a href="https://opengameart.org/content/rotating-coin">Rotating coin by Puddin</a></li>
+<li>Road texture: <a href="https://www.reddit.com/r/PixelArt/comments/1jhu3i/occcwip_city_slum_tileset_mockup/">City Slum Tileset Mock-Up by u/zealotlee</a></li>
 </ul>
 </li>
 
 <li><strong>Prototype Closest Other Game:</strong>
-Which other game most closely resembles your game? If you are borrowing code from a Phaser Example, you must say so here. If you borrow code from elsewhere, you must say so here.
+Prototype closely resembles other top down driving games like Spy Hunter and GTA. 
+Uses code from the "Sprite Pool" and "Breakout" Phaser examples.
 </li>
 
 <li><strong>High Concept:</strong>
@@ -80,11 +89,11 @@ How will the dramatic tension interact with the gameplay tension?
 </li>
 
 <li><strong>Target Audience:</strong>
-A single sentence that describes the demographic you're trying to reach.
+Fans of racing games, as well as fans of robbery/heist themed games.
 </li>
 
 <li><strong>Play Time:</strong>
-How long does your game take to play?
+Given how short the timers are, game should only last for about a minute (assuming you don't want to try again for a better score).
 </li>
 
 </ul>
