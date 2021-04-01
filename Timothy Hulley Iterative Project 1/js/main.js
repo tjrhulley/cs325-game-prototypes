@@ -311,7 +311,7 @@ function crash ()
 		}
 		} else {
 			infoText.setText([
-				'Thank you for playing!',
+				'Time\'s up! Thank you for playing!',
 				'Final Score: ' + score
 			]);
 		}
