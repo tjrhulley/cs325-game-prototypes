@@ -333,7 +333,6 @@ function collectCoin ()
 	if (gameStep === 4) {
 		moneyGroup.clear(true);
 		score += 100;
-		DEBUGtext.setText(score);
 		//increase score
 	}
 }
