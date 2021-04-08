@@ -1,0 +1,28 @@
+Obsticles too add:
+-Cars that swerve left or right.
+-Oil slick obsticle that freezes your movement.
+-Trash cans
+-Deer that move left or right.
+
+Add physics to car.
+Make it so you can catch up to the car at the end of the cop's turn.
+Add sound effects.
+-Car driving sounds (maybe add sounds every time an object passes you)
+-Police siren
+-Crashing/exploding sound
+-Dropped money sound
+-Collected money sound
+-Car gets away sound
+Add explosion effects if the car hits an obsticle
+Make the robber drive upward if they get away.
+Improve hud.
+
+
+Adjust difficult: Game's too hard. Increase velocity of car or decrease speed of cones
+
+
+https://stalomir.artstation.com/projects/aeJ59
+https://opengameart.org/content/deer-rework
+http://pixelartmaker.com/art/93a1c3e31d7a43d
+https://www.pixilart.com/art/oil-spill-010d622bc4c4764
+https://opengameart.org/content/explosion-7

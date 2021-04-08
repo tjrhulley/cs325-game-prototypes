@@ -1,2 +1,9 @@
 Obsticles that move on path, rather than go straight down.
+Oil slick obsticle that freezes your movement.
 High score and ability to restart game rather than refresh!
+Make it so you can catch up to the car at the end of the cop's turn.
+Add sound effects.
+Add explosion effects if the car hits an obsticle
+Make the robber drive upward if they get away.
+
+Adjust difficult: Game's too hard. Increase velocity of car or decrease speed of cones

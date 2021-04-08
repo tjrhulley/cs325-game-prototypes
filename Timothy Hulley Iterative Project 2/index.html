@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="utf-8">
+<title>Hello! Amaze!</title>
+<style>
+body
+{
+    color: #777;
+    font-family: "Avenir", Verdana, sans-serif;
+}
+#readme
+{
+    margin-top: 10px;
+}
+</style>
+</head>
+
+<body>
+<div id="game"></div>
+<div id="readme">
+<h2>Robber and Cop</h2>
+
+<ul>
+<li><strong>Originality:</strong>
+You play both roles of a heist! First as the robber escaping police, then as the police officer chasing following your own trail.
+It requires some fast reflexes and memorization to play!
+</li>
+
+<li><strong>Technical Merit:</strong>
+The game randomly decides where each obstacle will go, and also remembers the locations of each coin that is dropped. These locations are saved and accessed in arrays.
+
+The scrolling background is also just an illusion. It's just a gif of the road moving while your car is stationary.
+</li>
+
+<li><strong>Prototype Postmortem:</strong>
+I learned a couple of minor things in this project. How to use arrays, create custom bounds, and how to manage groups of objects.
+-The easiest part was randomly spawning cones and making sure the coins spawned correctly.
+-The hardest part was getting the collision to work between the cones and the car, though that didn't take too long to adjust.
+</li>
+
+<li><strong>Prototype Assets:</strong>
+All art assets are taken from other sources.
+<ul>
+<li>Robber's car: <a href="https://opengameart.org/content/red-car">Red Car by lawrence_laz</a></li>
+<li>Police car: <a href="https://opengameart.org/content/police-cars">Police Cars by clayster2012</a></li>
+<li>Traffic cone: <a href="http://pixelartmaker.com/art/41f48a29361a9f8">Traffic cone on pixelartmaker.com</a></li>
+<li>Money: <a href="https://opengameart.org/content/rotating-coin">Rotating coin by Puddin</a></li>
+<li>Road texture: <a href="https://www.reddit.com/r/PixelArt/comments/1jhu3i/occcwip_city_slum_tileset_mockup/">City Slum Tileset Mock-Up by u/zealotlee</a></li>
+</ul>
+</li>
+
+<li><strong>Prototype Closest Other Game:</strong>
+In the revision, I've added more obsticles (such as oil puddles that cause you to slip, and cars/deer that swerve), sound effects, new animations, and the ability to reset the game and track high score.
+
+Prototype closely resembles other top down driving games like Spy Hunter and GTA. 
+Uses code from the "Sprite Pool" and "Breakout" Phaser examples.
+</li>
+
+<li><strong>High Concept:</strong>
+A fast paced heist themed racing game where you play as the robber and the police officer.
+</li>
+
+<li><strong>Theme:</strong>
+This game is an action arcade racing game.
+</li>
+
+<li><strong>Mandated Variety:</strong>
+The game is an arcade style racing game with very basic. Press left or right arrow keys to move you car. The game will randomly place 20 obstacles on the road.
+</li>
+
+<li><strong>Prototype Goal:</strong>
+Evaluating driving controls in a game and possible two player mechanics, as well as memorizing details (such as where the coins will appear) on the fly.
+</li>
+
+<li><strong>Player Experience Goals:</strong>
+To feel excitement as obstacles and pickups fly past them, and tension as they try getting a higher score while avoiding the simplest mistakes.
+</li>
+
+<li><strong>Gameplay:</strong>
+Controls are the same for both cars. Left and right arrow keys will move your car in those directions, with the main mechanic being dodging obstacles. The whole game takes place over two "turns".
+
+In the first turn you control the robber. Your goal is simply to "escape" by letting the timer run out. As the robber drives, money that he has stolen will occasionally fall out of 
+his car. These coins cannot be collected by the robber. Once the timer runs out or the robber crashes into something, his turn ends and the officer's turn begins.
+
+The officer's turn is very similar to the robber's, but with one addition! As the cop drives down he will find the coins the robber dropped. Collecting those coins will increase your total score by 100.
+Points are also added up the farther along the cop goes, but he stops once reaching the point the robber stopped at (whether by crashing or reaching the end).
+Once the officer crashes or has caught up to where the robber stopped, the game ends! The total score (combining distance travelled and coins collected) will then be shown.
+
+Later builds of the game will feature more realistic car physics. There is also potential for a simultaneously two player mode where 
+the robber throws his own obsticles to stop the officer.
+</li>
+
+<li><strong>Strategies:</strong>
+To get a high score in this game, I expect players will need to find a balance of reaction timing and memorizing. Obviously you need good reflexes to avoid the obstacles, but 
+if you drive very erratically on the robber's turn, then the coins you drop will be spread erratically as well. Players will likely try to stick to one general area as much 
+as possible so more coins will appear there, while also being sure to avoid the obstacles. Remembering the pattern of the cones is also tricky but can be helpful when trying 
+to avoid them as the cop. Ultimately though remembering the position of the coins is likely the most valuable strategy.
+</li>
+
+<li><strong>Story/Setting/Premise:</strong>
+The game takes place in Bad Crime City. There is a crime happening in the city, and that's bad!
+Robert the robber has just robbed a bank and Perry Oliver the police officer is off to catch him!
+
+Yeah the story isn't incredibly original. It's very simple and easy for anyone to immediately grasp. There is however still a great amount of tension between the gameplay and 
+story elements, and the simplicity makes it easier to feel that tension. Robber's will feel the excitement of fleeing and narrowly avoiding obstacles, while coppers will 
+feel the tension of trying to follow their path and collect the stolen goods back!.
+
+</li>
+
+<li><strong>Target Audience:</strong>
+Fans of racing games, as well as fans of robbery/heist themed games.
+</li>
+
+<li><strong>Play Time:</strong>
+Given how short the timers are, game should only last for about a minute (assuming you don't want to try again for a better score).
+</li>
+
+</ul>
+</div>
+
+<!-- main.js must come at the end since it expects the HTML to have been created. -->
+<script src="js/main.js" type="module"></script>
+</body>
+</html>
