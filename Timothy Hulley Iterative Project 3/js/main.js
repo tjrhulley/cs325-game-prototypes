@@ -145,6 +145,8 @@ function create ()
 			} else if (selectedUnit < 0) {
 				//Go to next turn
 				nextTurn();
+				DEBUGTEXT1.text = "Press 1-9 to select a unit";
+				DEBUGTEXT2.text = "Or press enter to advance a turn.";
 				DEBUGTEXT3.text = 'Go to next turn!';
 				resourcePoints += 2;
 				pointText.text = "Resource points: " + resourcePoints;
